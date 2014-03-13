@@ -108,11 +108,7 @@ endfunction
 function! s:InsertNewline()
   " Special buffer types (help, quickfix, command window, etc.) have buftype set
   if &buftype == ""
-    if (col('.') + 1) == col('$')
-      exe "normal! " . v:count1 . "o"
-    else
-      exe "normal! " . v:count1 . "i\<Enter>"
-    endif
+    exe "normal! " . v:count1 . "i\<Enter>"
   else
     exe "normal! " . v:count1 . "\<Enter>"
   endif
